@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Список пользователей</title>
+<style type="text/css">
+body {
+  padding: 20px;
+}
+
+#app {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+th, h2{
+  font-weight:bold; 
+  padding-bottom:10px;
+}
+img{
+  width:50px;
+  height:50px;
+}
+td,th{
+  padding:5px;  
+    border:1px solid lightgray; 
+}
+.butOpen::before{
+  content:"+"
+}
+.butOpen{
+  content: "+";
+  background-color: green;
+}
+.butClose::before{
+  content: "-";
+  }
+.butClose{
+
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<div id="app">
+        <h2>{{title}}:
+            <span>{{count_users()}} / {{compute_users}}</span> 
+            <button type="button" v-tooltip v-on:click="toggle()" v-bind:class="[to_show ? 'butClose' : 'butOpen']"></button></h2>
+         
+          <table v-if="to_show">
+          <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Аватар</th>
+          </tr>
+             <tr v-for="user in users"  v-bind:key="user.ind">
+               <td>{{user.surname | uppercase}}</td>
+               <td>{{user.name}}</td>
+               <td>{{user.patronymic}}</td>
+               <td>
+                   <img v-if="user.avatar" v-bind:src="user.avatar" />
+                   <span v-else title="Тут могла бы быть ваша фотография">Ава</span>
+               </td>
+             </tr>
+          </table>
+           
+         
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            window.app = new Vue({
+          el: "#app",
+          data: function() {
+            return{
+                tooltip: 'Показать список пользователей',
+                title: 'Пользователи',
+                to_show:false,
+                users: [
+                { name: "Иван", surname:"Иванов", patronymic: "Иванович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Sunglasses&hairColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Gray01&eyeType=Surprised&eyebrowType=UpDownNatural&mouthType=Grimace&skinColor=DarkBrown", ind:1},
+                { name: "Василий", surname:"Петров", patronymic: "Николаевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Prescription02&hairColor=Brown&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=Hoodie&clotheColor=Red&eyeType=Wink&eyebrowType=UpDownNatural&mouthType=Sad&skinColor=Yellow", ind:5},
+                { name: "Андрей", surname:"Денисов", patronymic: "Олегович", ind:3 }, 
+                { name: "Михаил", surname:"Кац", patronymic: "Абрамович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=BlazerShirt&clotheColor=Black&eyeType=Close&eyebrowType=AngryNatural&mouthType=Sad&skinColor=Tanned", ind:4}, 
+                { name: "Евгений", surname:"Ботинкин", patronymic: "Алексеевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=Default&mouthType=Default&skinColor=Tanned", ind:8},
+                ]
+            }
+          },
+          methods: {
+              toggle: function(){
+                if(this.to_show) { 
+                  this.to_show=false; 
+                  this.tooltip='Показать список пользователей';   
+                }
+                else{
+                   this.to_show=true;
+                   this.tooltip='Скрыть список пользователей';       
+                }
+             },
+             count_users: function(){
+                     return this.users.length;
+                      
+             }
+          },
+          computed:{
+              compute_users: function(){
+                  return this.users.length;
+              }
+          },
+          filters: {
+                uppercase: function (value) {
+                    if (!value) return ''
+                    value = value.toString()
+                    return value.toUpperCase()
+                }
+          },
+          directives: {
+              tooltip:{
+                inserted:function (el,binding,vnode){
+                    el.title =vnode.context.tooltip;
+                },   
+                update: function (el,binding,vnode){
+                    el.title =vnode.context.tooltip;
+                }                 
+              },
+              copy:{
+
+              }
+          }
+        });
+        </script>
+    </body>
+</html>        
