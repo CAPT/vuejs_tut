@@ -42,11 +42,14 @@ td,th{
 
   background-color: red;
 }
+[v-cloak] {
+  display: none;
+}
 </style>
 </head>
 <body>
 
-<div id="app">
+<div v-cloak id="app">
         <h2>{{title}}:
             <span>{{count_users()}} / {{compute_users}}</span> 
             <button type="button" v-tooltip v-on:click="toggle()" v-bind:class="[to_show ? 'butClose' : 'butOpen']"></button></h2>
@@ -81,13 +84,7 @@ td,th{
                 tooltip: 'Показать список пользователей',
                 title: 'Пользователи',
                 to_show:false,
-                users: [
-                { name: "Иван", surname:"Иванов", patronymic: "Иванович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Sunglasses&hairColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Gray01&eyeType=Surprised&eyebrowType=UpDownNatural&mouthType=Grimace&skinColor=DarkBrown", ind:1},
-                { name: "Василий", surname:"Петров", patronymic: "Николаевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Prescription02&hairColor=Brown&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=Hoodie&clotheColor=Red&eyeType=Wink&eyebrowType=UpDownNatural&mouthType=Sad&skinColor=Yellow", ind:5},
-                { name: "Андрей", surname:"Денисов", patronymic: "Олегович", ind:3 }, 
-                { name: "Михаил", surname:"Кац", patronymic: "Абрамович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=BlazerShirt&clotheColor=Black&eyeType=Close&eyebrowType=AngryNatural&mouthType=Sad&skinColor=Tanned", ind:4}, 
-                { name: "Евгений", surname:"Ботинкин", patronymic: "Алексеевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=Default&mouthType=Default&skinColor=Tanned", ind:8},
-                ]
+                users: []
             }
           },
           methods: {
@@ -103,13 +100,26 @@ td,th{
              },
              count_users: function(){
                      return this.users.length;
-                      
+               },
+             get_users: function(){
+                  this.users=[
+                    { name: "Иван", surname:"Иванов", patronymic: "Иванович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Sunglasses&hairColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtScoopNeck&clotheColor=Gray01&eyeType=Surprised&eyebrowType=UpDownNatural&mouthType=Grimace&skinColor=DarkBrown", ind:1},
+                    { name: "Василий", surname:"Петров", patronymic: "Николаевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Prescription02&hairColor=Brown&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=Hoodie&clotheColor=Red&eyeType=Wink&eyebrowType=UpDownNatural&mouthType=Sad&skinColor=Yellow", ind:5},
+                    { name: "Андрей", surname:"Денисов", patronymic: "Олегович", ind:3 }, 
+                    { name: "Михаил", surname:"Кац", patronymic: "Абрамович", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=BlazerShirt&clotheColor=Black&eyeType=Close&eyebrowType=AngryNatural&mouthType=Sad&skinColor=Tanned", ind:4}, 
+                    { name: "Евгений", surname:"Ботинкин", patronymic: "Алексеевич", avatar:"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=Default&mouthType=Default&skinColor=Tanned", ind:8},
+                ]
              }
           },
           computed:{
               compute_users: function(){
                   return this.users.length;
               }
+          },
+          watch:{
+            users: function(newValue){
+                console.log("users changed:", newValue)
+            }
           },
           filters: {
                 uppercase: function (value) {
@@ -130,6 +140,9 @@ td,th{
               copy:{
 
               }
+          },
+          mounted : function(){
+            this.get_users();
           }
         });
         </script>
