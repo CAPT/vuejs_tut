@@ -15,7 +15,7 @@
         padding: 20px;
       }
       #app {
-        background: #fff;
+        background: #eee;
         border-radius: 4px;
         padding: 20px;
       }
@@ -33,19 +33,6 @@
         padding: 5px;
         border: 1px solid lightgray;
       }
-      .butOpen::before {
-        content: "+";
-      }
-      .butOpen {
-        content: "+";
-        background-color: green;
-      }
-      .butClose::before {
-        content: "-";
-      }
-      .butClose {
-        background-color: red;
-      }
       [v-cloak] {
         display: none;
       }
@@ -56,12 +43,13 @@
       <h2>
         {{title}}
       </h2>
-      <!--call component here-->
+      <!--call components here-->
       <users-list v-bind:listed_users="users"></users-list>
 
       <user-form v-bind:edit_users="users[0]"></user-form>
+      <!---Try to call more than  ↑ users[4]-th  element - default value returns-->
     </div>
-    <!--define template to render-->
+    <!--define templates to render-->
     <template id="users-list">
       <div>
         <table>
@@ -83,24 +71,25 @@
         </table>
       </div>
     </template>
+
     <template id="user-form">
       <form>
         <table>
           <tr>
             <td>Имя:</td>
-            <td><input type="text" v-bind:value="edit_users.name" /></td>
+            <td><input type="text" v-model="edit_users.name" /></td>
           </tr>
           <tr>
             <td>Фамилия:</td>
-            <td><input type="text" v-bind:value="edit_users.surname" /></td>
+            <td><input type="text" v-model="edit_users.surname" /></td>
           </tr>
           <tr>
             <td><span>Отчество: </span></td>
-            <td><input type="text" v-bind:value="edit_users.patronymic" /></td>
+            <td><input type="text" v-model="edit_users.patronymic" /></td>
           </tr>
           <tr>
             <td><span>Аватар url: </span></td>
-            <td><input type="text" v-bind:value="edit_users.avatar" /></td>
+            <td><input type="text" v-model="edit_users.avatar" /></td>
           </tr>
         </table>
       </form>
@@ -123,7 +112,17 @@
         template: "#user-form",
         props: {
           edit_users: {
-            type: Object
+            type: Object,
+            default: function() {
+              return {
+                name: "Михаил",
+                surname: "Кац",
+                patronymic: "Абрамович",
+                avatar:
+                  "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&hairColor=Auburn&facialHairType=BeardMagestic&facialHairColor=Auburn&clotheType=BlazerShirt&clotheColor=Black&eyeType=Close&eyebrowType=AngryNatural&mouthType=Sad&skinColor=Tanned",
+                ind: 4
+              };
+            }
           }
         }
       };
@@ -224,8 +223,7 @@
             update: function(el, binding, vnode) {
               el.title = vnode.context.tooltip;
             }
-          },
-          copy: {}
+          }
         },
         mounted: function() {
           this.get_users();
