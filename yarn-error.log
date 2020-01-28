@@ -1,0 +1,30 @@
+Arguments: 
+  C:\FILES\Node\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add bootstrap axios
+
+PATH: 
+  C:\app\VinnikovAP\product\11.1.0\client_1;C:\app\VinnikovAP\product\11.1.0\client_1\bin;C:\app\VinnikovAP\product\11.2.0\client_1\bin;C:\app\VinnikovAP\product\11.2.0\client_1C:\ProgramData\Oracle\Java\javapath;C:\Informatica\9.5.1\clients\DT\bin;C:\Informatica\9.5.1\clients\tools\datadirect;C:\Informatica\9.5.1\clients\tools\odbcdrv;C:\app\VinnikovAP\product\11.2.0\client_1\bin;C:\app\VinnikovAP\product\11.1.0\client_1\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;c:\Program Files (x86)\AMD APP\bin\x86_64;c:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Microsoft\Web Platform Installer\;W:\usr\local\php5;C:\FILES\Node;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Git\bin;C:\FILES\JAVA\apache-maven-3.0.5\bin;C:\Program Files (x86)\SAP BusinessObjects\sqlanywhere\BIN64;C:\Program Files (x86)\SAP BusinessObjects\sqlanywhere\BIN32;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\TortoiseSVN\bin;C:\Windows\idmu\common;C:\FILES\Node\;C:\Program Files (x86)\Yarn\bin\;C:\app\VinnikovAP\product\11.1.0\client_1;C:\app\VinnikovAP\product\11.1.0\client_1\bin;C:\app\VinnikovAP\product\11.2.0\client_1\bin;C:\app\VinnikovAP\product\11.2.0\client_1;C:\ProgramData\Oracle\Java\javapath;C:\Informatica\9.5.1\clients\DT\bin;C:\Informatica\9.5.1\clients\tools\datadirect;C:\Informatica\9.5.1\clients\tools\odbcdrv;C:\app\VinnikovAP\product\11.2.0\client_1\bin;C:\app\VinnikovAP\product\11.1.0\client_1\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;c:\Program Files (x86)\AMD APP\bin\x86_64;c:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Microsoft\Web Platform Installer\;W:\usr\local\php5;C:\FILES\Node;C:\Program Files\TortoiseSVN\bin;C:\FILES\Node\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\FILES\JAVA\apache-maven-3.0.5\bin; C:\ProgramData\Oracle\Java\javapathl; C:\Program Files\Java\jre1.8.0_77\bin; C:\Program Files\Java\jdk1.8.0_77;C:\cygwin64\bin;C:\Users\vinnikovap\AppData\Local\Spoon\Cmd;C:\Program Files\JetBrains\WebStorm 2018.3.1\bin;;D:\PhpStorm 2018.3.1\bin;;C:\Users\vinnikovap\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vinnikovap\AppData\Roaming\npm;C:\Users\vinnikovap\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: unable to verify the first certificate
+      at TLSSocket.onConnectSecure (_tls_wrap.js:1321:34)
+      at TLSSocket.emit (events.js:210:5)
+      at TLSSocket._finishInit (_tls_wrap.js:794:8)
+      at TLSWrap.ssl.onhandshakedone (_tls_wrap.js:608:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
