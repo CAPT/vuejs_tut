@@ -1,5 +1,5 @@
 <template>
-  <table v-cloak>
+  <table v-cloak class="table table-hover">
     <thead>
       <tr>
         <th>Фамилия</th>
@@ -21,7 +21,7 @@
         <td>{{ user.company }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
-        <td>{{ user.address }}</td> 
+        <td>{{ user.address }}</td>
       </tr>
     </tbody>
     <tfoot>
@@ -33,6 +33,11 @@
 <script>
 export default {
   name: 'UsersList',
+  filters: {
+    uppercase: function(value) {
+      return value.toUpperCase()
+    }
+  },
   props: {
     users: {
       type: Array,
@@ -42,11 +47,6 @@ export default {
   computed: {
     compute_users: function() {
       return this.users.length
-    }
-  },
-  filters: {
-    uppercase: function(value) {
-      return value.toUpperCase()
     }
   }
 }

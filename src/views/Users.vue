@@ -2,9 +2,7 @@
   <div>
     <h2>Список пользователей</h2>
 
-    <div v-if="!users.length" class="alert alert-warning">
-      Загрузка...
-    </div>
+    <div v-if="!users.length" class="alert alert-warning">Загрузка...</div>
     <user-list v-else :users="users" />
   </div>
 </template>
