@@ -1,5 +1,6 @@
 # VueUsersApp
-##created by VueCli while i've been studying this awesome framework
+
+## created by VueCli while i've been studying this awesome framework
 
 ## Project setup
 ```
