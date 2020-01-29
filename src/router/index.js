@@ -3,11 +3,15 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
 import Users from '@/views/Users.vue'
+import EditUser from '@/views/EditUser.vue'
+import DeleteUser from '@/views/DeleteUser.vue'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history', //'hash',
+  linkExactActiveClass: 'active',
+
   routes: [
     {
       path: '/',
@@ -23,11 +27,17 @@ const router = new VueRouter({
       path: '/users',
       name: 'users',
       component: Users
-    } //,
-    /*{
-      path: '/editUser',
-      component: editUser
-    },*/
+    },
+    {
+      path: '/edit/:id',
+      name: 'edit',
+      component: EditUser
+    },
+    {
+      path: '/delete/:id',
+      name: 'delete',
+      component: DeleteUser
+    }
   ]
 })
 

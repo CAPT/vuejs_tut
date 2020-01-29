@@ -6,6 +6,7 @@
     </div>--->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">VueUsersApp</a>
       <a class="navbar-brand" href="#"></a>
       <button
         class="navbar-toggler"
@@ -20,20 +21,14 @@
       </button>
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">
-              Home
-            </router-link>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/users">
-              Users
-            </router-link>
+            <router-link class="nav-link" to="/users">Users</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about">
-              About
-            </router-link>
+            <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
       </div>

@@ -129,22 +129,6 @@
       "registered": "06.03.2017"
     },
     {
-      "id": 8,
-      "isActive": true,
-      "balance": "$1,659.98",
-      "picture": "http://placehold.it/128x128",
-      "age": 28,
-      "accessLevel": "guest",
-      "firstName": "Beverley",
-      "lastName": "Hayes",
-      "company": "STUCCO",
-      "email": "beverley.hayes@stucco.biz",
-      "phone": "+7 (815) 429-2071",
-      "address": "145 Creamer Street, Curtice, Louisiana, 7461",
-      "about": "Lorem aute commodo ex laboris enim minim duis adipisicing esse commodo occaecat pariatur. Est veniam et id ullamco consectetur occaecat cillum ad. Occaecat est eu adipisicing ex.",
-      "registered": "28.03.2018"
-    },
-    {
       "id": 9,
       "isActive": false,
       "balance": "$3,999.36",
