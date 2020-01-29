@@ -18,7 +18,6 @@
       <tr v-for="user in users" :key="user.ind">
         <td>
           <router-link :to="'/edit/' + user.id"> # {{ user.id }}</router-link>
-        </td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName | uppercase }}</td>
         <!-- <td>{{ user.age }}</td>-->

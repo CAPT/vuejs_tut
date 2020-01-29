@@ -5,7 +5,10 @@
     <div v-if="!user" class="alert alert-warning">
       Загрузка данных...
     </div>
-    <user-form v-else :user="user" />
+    <user-form v-else :user="user" @update="user = $event" />
+    <button type="button" class="btn btn-primary" @click="saveUser">
+      Сохранить
+    </button>
   </div>
 </template>
 
@@ -41,6 +44,14 @@ export default {
       axios
         .post('http://localhost:3004/users/', '123')
         .then(response => (this.user = response.data))
+        .catch(error => console.error(error))
+    },
+    saveUser() {
+      axios
+        .patch('http://localhost:3004/users/' + this.id, this.user)
+        .then(() => {
+          this.$router.push('/users')
+        })
         .catch(error => console.error(error))
     }
   }

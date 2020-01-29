@@ -5,6 +5,7 @@ import About from '@/views/About.vue'
 import Users from '@/views/Users.vue'
 import EditUser from '@/views/EditUser.vue'
 import DeleteUser from '@/views/DeleteUser.vue'
+import AddUser from '@/views/AddUser.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const router = new VueRouter({
       path: '/delete/:id',
       name: 'delete',
       component: DeleteUser
+    },
+    {
+      path: 'add',
+      name: 'add',
+      component: AddUser
     }
   ]
 })
