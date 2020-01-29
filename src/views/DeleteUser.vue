@@ -1,9 +1,10 @@
 <template>
   <div>
-    EDIT USER {{ id }}
+    Удаляем пользователя {{ id }}
 
     <div v-if="!user" class="alert alert-warning">
-      Загрузка данных...
+      Удаление данных... <br />
+      Вы будете переадресованы обратно на список
     </div>
     <div v-else :user="user">
       <pre> {{ user }} </pre>
@@ -33,8 +34,11 @@ export default {
     deleteUser() {
       axios
         .delete('http://localhost:3004/users/' + this.id)
-        .then(response => (this.user = response.data))
+        .then(setTimeout(this.goBack, 3000))
         .catch(error => console.error(error))
+    },
+    goBack() {
+      window.history.back()
     }
   }
 }

@@ -16,7 +16,9 @@
     </thead>
     <tbody>
       <tr v-for="user in users" :key="user.ind">
-        <router-link :to="'/edit/' + user.id"> # {{ user.id }}</router-link>
+        <td>
+          <router-link :to="'/edit/' + user.id"> # {{ user.id }}</router-link>
+        </td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName | uppercase }}</td>
         <!-- <td>{{ user.age }}</td>-->
@@ -25,7 +27,7 @@
         <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
         <td>{{ user.isActive }}</td>
-        <td><router-link :to="'/delete/' + user.id" class='red'>X</router-link></td>
+        <td><router-link :to="'/delete/' + user.id" class="red">X</router-link></td>
       </tr>
     </tbody>
     <tfoot>
