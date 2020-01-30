@@ -2,17 +2,17 @@
   <div>
     <div class="form-group">
       <label>Имя</label>
-      <input type="text" class="form-control" v-model="localUser.firstName" />
+      <input v-model="localUser.firstName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Фамилия</label>
-      <input type="text" class="form-control" v-model="localUser.lastName" />
+      <input v-model="localUser.lastName" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="text" class="form-control" v-model="localUser.email" />
+      <input v-model="localUser.email" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
@@ -22,17 +22,17 @@
 
     <div class="form-group">
       <label>Возраст</label>
-      <input type="number" class="form-control" v-model="localUser.age" />
+      <input v-model="localUser.age" type="number" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Активный</label>
-      <div class="checkbox-inline"><input type="checkbox" v-model="localUser.isActive" /> Да</div>
+      <div class="checkbox-inline"><input v-model="localUser.isActive" type="checkbox" /> Да</div>
     </div>
 
     <div class="form-group">
       <label>Уровень доступа</label>
-      <select class="form-control" v-model="localUser.accessLevel">
+      <select v-model="localUser.accessLevel" class="form-control">
         <option v-for="item in accessList" :key="item">
           {{ item }}
         </option>
@@ -41,27 +41,27 @@
 
     <div class="form-group">
       <label>Баланс</label>
-      <input type="text" class="form-control" v-model="localUser.balance" />
+      <input v-model="localUser.balance" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Телефон</label>
-      <input type="text" class="form-control" v-model="localUser.phone" />
+      <input v-model="localUser.phone" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Адрес</label>
-      <input type="text" class="form-control" v-model="localUser.address" />
+      <input v-model="localUser.address" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Компания</label>
-      <input type="text" class="form-control" v-model="localUser.company" />
+      <input v-model="localUser.company" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Биография</label>
-      <textarea class="form-control" v-model="localUser.about"></textarea>
+      <textarea v-model="localUser.about" class="form-control"></textarea>
     </div>
 
     <div class="form-group">

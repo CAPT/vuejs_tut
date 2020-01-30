@@ -2,10 +2,10 @@
   <div>
     <h2>Список пользователей</h2>
     <button type="button" class="btn btn-success">
-          <router-link :to="'/add/'">
-            Добавить пользователя
-          </router-link>
-        </button>
+      <router-link :to="'/add/'">
+        Добавить пользователя
+      </router-link>
+    </button>
     <div v-if="!users.length" class="alert alert-warning">Загрузка...</div>
     <user-list v-else :users="users" />
   </div>

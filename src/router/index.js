@@ -40,7 +40,7 @@ const router = new VueRouter({
       component: DeleteUser
     },
     {
-      path: 'add',
+      path: '/add',
       name: 'add',
       component: AddUser
     }
