@@ -128,8 +128,8 @@ export default {
     // Копируем пользователя в локальное состояние
     this.localUser = Object.assign({}, this.user)
   },
-  methods:{
-    updateUser(){
+  methods: {
+    updateUser() {
       this.$emit('update', Object.assign({}, this.localUser))
     }
   }
