@@ -40,12 +40,6 @@ export default {
         .then(response => (this.user = response.data))
         .catch(error => console.error(error))
     },
-    addUser() {
-      axios
-        .post('http://localhost:3004/users/', '123')
-        .then(response => (this.user = response.data))
-        .catch(error => console.error(error))
-    },
     saveUser() {
       axios
         .patch('http://localhost:3004/users/' + this.id, this.user)

@@ -7,7 +7,7 @@
       "picture": "http://placehold.it/128x128",
       "age": 32,
       "accessLevel": "user",
-      "firstName": "Workman",
+      "firstName": "Workmanasdasdas",
       "lastName": "Mcfarland",
       "company": "EXIAND",
       "email": "workman.mcfarland@exiand.io",
@@ -1646,6 +1646,22 @@
       "phone": "",
       "address": "",
       "about": "",
+      "registered": ""
+    },
+    {
+      "id": 104,
+      "isActive": true,
+      "balance": "Infinity",
+      "picture": "",
+      "age": "",
+      "accessLevel": "user",
+      "firstName": "God",
+      "lastName": "Lord",
+      "company": "Heavens Inc.",
+      "email": "web@god.com",
+      "phone": "213213",
+      "address": "32123213",
+      "about": "God",
       "registered": ""
     }
   ]

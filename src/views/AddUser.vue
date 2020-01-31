@@ -6,7 +6,7 @@
       </span>
     </div>
     <div class="panel-body">
-      <user-form v-model="user">
+      <user-form v-model="user" @update="user = $event">
         <div slot="buttons">
           <button type="button" class="btn btn-success" @click="addUser">
             Создать пользователя
@@ -47,14 +47,6 @@ export default {
     // Пользователь
     user: defaultUser
   }),
-  watch: {
-    // При изменении локального состояния
-    // отправляем объект наверх
-    localUser: {
-      deep: true,
-      handler: 'updateUser'
-    }
-  },
   methods: {
     addUser() {
       axios
@@ -63,9 +55,6 @@ export default {
           this.$router.push({ path: '/users' })
         })
         .catch(error => console.error(error))
-    },
-    updateUser(){
-      this.$emit('update', Object.assign({}, this.localUser))
     }
   }
 }
