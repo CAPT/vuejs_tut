@@ -12,31 +12,31 @@
 </template>
 
 <script>
-import UserList from '@/components/UsersList.vue'
-import axios from 'axios'
+import UserList from "@/components/UsersList.vue";
+import axios from "axios";
 
 export default {
-  name: 'UsersPage',
+  name: "UsersPage",
   components: {
-    'user-list': UserList
+    "user-list": UserList
   },
   data: function() {
     return {
       users: []
-    }
+    };
   },
   mounted() {
-    this.loadUsers()
+    this.loadUsers();
   },
   methods: {
     loadUsers() {
       axios
-        .get('http://localhost:3004/users')
+        .get("http://localhost:3004/users")
         .then(response => {
-          this.users = response.data
+          this.users = response.data;
         })
-        .catch(error => console.error(error))
+        .catch(error => console.error(error));
     }
   }
-}
+};
 </script>

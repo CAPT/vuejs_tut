@@ -13,41 +13,41 @@
 </template>
 
 <script>
-import UserForm from '@/components/UserForm.vue'
-import axios from 'axios'
+import UserForm from "@/components/UserForm.vue";
+import axios from "axios";
 export default {
-  name: 'EditUserPAge',
+  name: "EditUserPAge",
   components: {
     UserForm
   },
   data: function() {
     return {
       user: null
-    }
+    };
   },
   computed: {
     id() {
-      return this.$route.params.id
+      return this.$route.params.id;
     }
   },
   mounted() {
-    this.loadUser()
+    this.loadUser();
   },
   methods: {
     loadUser() {
       axios
-        .get('http://localhost:3004/users/' + this.id)
+        .get("http://localhost:3004/users/" + this.id)
         .then(response => (this.user = response.data))
-        .catch(error => console.error(error))
+        .catch(error => console.error(error));
     },
     saveUser() {
       axios
-        .patch('http://localhost:3004/users/' + this.id, this.user)
+        .patch("http://localhost:3004/users/" + this.id, this.user)
         .then(() => {
-          this.$router.push('/users')
+          this.$router.push("/users");
         })
-        .catch(error => console.error(error))
+        .catch(error => console.error(error));
     }
   }
-}
+};
 </script>

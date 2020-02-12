@@ -3,42 +3,42 @@
     <div class="form-group" :class="{ 'has-error': errors.has('firstName') }">
       <label>Имя</label>
       <input
+        v-model="user.firstName"
+        v-validate="'required'"
         type="text"
         class="form-control"
-        v-model="user.firstName"
         name="firstName"
-        v-validate="'required'"
       />
       <span v-show="errors.has('firstName')" class="help-block text-danger">
-        {{ errors.first('firstName') }}
+        {{ errors.first("firstName") }}
       </span>
     </div>
 
     <div class="form-group" :class="{ 'has-error': errors.has('lastName') }">
       <label>Фамилия</label>
       <input
+        v-model="user.lastName"
+        v-validate="'required'"
         type="text"
         class="form-control"
-        v-model="user.lastName"
         name="lastName"
-        v-validate="'required'"
       />
       <span v-show="errors.has('lastName')" class="help-block text-danger">
-        {{ errors.first('lastName') }}
+        {{ errors.first("lastName") }}
       </span>
     </div>
 
     <div class="form-group" :class="{ 'has-error': errors.has('email') }">
       <label>Email</label>
       <input
+        v-model="user.email"
+        v-validate="'required|email'"
         type="text"
         class="form-control"
-        v-model="user.email"
         name="email"
-        v-validate="'required|email'"
       />
       <span v-show="errors.has('email')" class="help-block text-danger">
-        {{ errors.first('email') }}
+        {{ errors.first("email") }}
       </span>
     </div>
 
@@ -49,17 +49,19 @@
 
     <div class="form-group">
       <label>Возраст</label>
-      <input type="number" class="form-control" v-model="user.age" />
+      <input v-model="user.age" type="number" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Активный</label>
-      <div class="checkbox-inline"><input type="checkbox" v-model="user.isActive" /> Да</div>
+      <div class="checkbox-inline">
+        <input v-model="user.isActive" type="checkbox" /> Да
+      </div>
     </div>
 
     <div class="form-group">
       <label>Уровень доступа</label>
-      <select class="form-control" v-model="user.accessLevel">
+      <select v-model="user.accessLevel" class="form-control">
         <option v-for="item in accessList" :key="item">
           {{ item }}
         </option>
@@ -68,27 +70,27 @@
 
     <div class="form-group">
       <label>Баланс</label>
-      <input type="text" class="form-control" v-model="user.balance" />
+      <input v-model="user.balance" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Телефон</label>
-      <input type="text" class="form-control" v-model="user.phone" />
+      <input v-model="user.phone" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Адрес</label>
-      <input type="text" class="form-control" v-model="user.address" />
+      <input v-model="user.address" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Компания</label>
-      <input type="text" class="form-control" v-model="user.company" />
+      <input v-model="user.company" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
       <label>Биография</label>
-      <textarea class="form-control" v-model="user.about"></textarea>
+      <textarea v-model="user.about" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
@@ -111,16 +113,16 @@
 // Подключаем vee-validate
 //Vue.use(VeeValidate)
 export default {
-  name: 'UserForm',
+  name: "UserForm",
   // Прокидываем область видимости родителя для валидации
-  inject: ['$validator'],
+  inject: ["$validator"],
   /*components: {
     Datepicker: () => import('@/components/datepicker.vue'),
     AvatarUploader: () => import('@/components/avatar-uploader.vue')
   },*/
   model: {
     // Настраиваем компоненту работу с v-model
-    prop: 'user'
+    prop: "user"
   },
   props: {
     // Пользователь
@@ -130,7 +132,7 @@ export default {
     }
   },
   data: () => ({
-    accessList: ['guest', 'user', 'admin']
+    accessList: ["guest", "user", "admin"]
   })
-}
+};
 </script>

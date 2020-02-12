@@ -27,7 +27,9 @@
         <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
         <td>{{ user.isActive }}</td>
-        <td><router-link :to="'/delete/' + user.id" class="red">X</router-link></td>
+        <td>
+          <router-link :to="'/delete/' + user.id" class="red">X</router-link>
+        </td>
       </tr>
     </tbody>
     <tfoot>
@@ -45,10 +47,10 @@ a.red {
 </style>
 <script>
 export default {
-  name: 'UsersList',
+  name: "UsersList",
   filters: {
     uppercase: function(value) {
-      return value.toUpperCase()
+      return value.toUpperCase();
     }
   },
   props: {
@@ -59,8 +61,8 @@ export default {
   },
   computed: {
     compute_users: function() {
-      return this.users.length
+      return this.users.length;
     }
   }
-}
+};
 </script>

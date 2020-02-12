@@ -18,28 +18,28 @@
 </template>
 
 <script>
-import UserForm from '@/components/UserForm.vue'
-import axios from 'axios'
+import UserForm from "@/components/UserForm.vue";
+import axios from "axios";
 
 const defaultUser = {
   id: 0,
   isActive: false,
-  balance: '',
-  picture: '',
+  balance: "",
+  picture: "",
   age: 0,
-  accessLevel: '',
-  firstName: '',
-  lastName: '',
-  company: '',
-  email: '',
-  phone: '',
-  address: '',
-  about: '',
-  registered: ''
-}
+  accessLevel: "",
+  firstName: "",
+  lastName: "",
+  company: "",
+  email: "",
+  phone: "",
+  address: "",
+  about: "",
+  registered: ""
+};
 
 export default {
-  name: 'AddUserPage',
+  name: "AddUserPage",
   components: {
     UserForm
   },
@@ -50,12 +50,12 @@ export default {
   methods: {
     addUser() {
       axios
-        .post('http://localhost:3004/users/', this.user)
+        .post("http://localhost:3004/users/", this.user)
         .then(() => {
-          this.$router.push({ path: '/users' })
+          this.$router.push({ path: "/users" });
         })
-        .catch(error => console.error(error))
+        .catch(error => console.error(error));
     }
   }
-}
+};
 </script>
