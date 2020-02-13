@@ -48,6 +48,9 @@ export default {
     user: defaultUser
   }),
   methods: {
+    ttt(e) {
+      console.log(e);
+    },
     addUser() {
       axios
         .post("http://localhost:3004/users/", this.user)

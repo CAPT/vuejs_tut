@@ -30,8 +30,15 @@ export default {
   },
   methods: {
     loadUsers() {
+      const token = "1234567890";
+
+      const config = {
+        headers: {
+          Authorization: `Owner ${token}`
+        }
+      };
       axios
-        .get("http://localhost:3004/users")
+        .get("http://localhost:3004/users", config)
         .then(response => {
           this.users = response.data;
         })

@@ -98,11 +98,11 @@ export default {
   name: "UserForm",
   // Прокидываем область видимости родителя для валидации
   //inject: ['$validator'],
-  /*components: {
-    Datepicker: () => import('@/components/datepicker.vue'),
-    AvatarUploader: () => import('@/components/avatar-uploader.vue'),
-    RichEditor: () => import('@/components/rich-editor.vue')
-  },*/
+  components: {
+    Datepicker: () => import("@/components/Datepicker.vue") //,
+    // AvatarUploader: () => import('@/components/avatar-uploader.vue'),
+    //RichEditor: () => import('@/components/rich-editor.vue')
+  },
   model: {
     prop: "user"
   },

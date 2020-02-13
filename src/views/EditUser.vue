@@ -5,7 +5,8 @@
     <div v-if="!user" class="alert alert-warning">
       Загрузка данных...
     </div>
-    <user-form v-else :user="user" @update="user = $event" />
+    <user-form v-else v-model="user" @update="user = $event" />
+    <!--/*:user="user"*/-->
     <button type="button" class="btn btn-primary" @click="saveUser">
       Сохранить
     </button>
