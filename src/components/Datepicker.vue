@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import flatpickr from 'flatpickr'
-import 'flatpickr/dist/flatpickr.css'
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.css";
 
 export default {
-  name: 'Datepicker',
+  name: "Datepicker",
   props: {
     value: {
       type: String,
@@ -20,33 +20,33 @@ export default {
     fp: null
   }),
   watch: {
-    value: 'updateDatepicker'
+    value: "updateDatepicker"
   },
   mounted() {
-    this.initDatepicker()
+    this.initDatepicker();
   },
   beforeDestroy() {
     if (this.fp) {
-      this.fp.destroy()
+      this.fp.destroy();
     }
   },
   methods: {
     update(newDate) {
-      this.$emit('input', newDate)
+      this.$emit("input", newDate);
     },
     initDatepicker() {
       this.fp = flatpickr(this.$refs.datepicker, {
-        dateFormat: 'd.m.Y',
+        dateFormat: "d.m.Y",
         onChange: (_, dateStr) => {
-          this.update(dateStr)
+          this.update(dateStr);
         }
-      })
+      });
     },
     updateDatepicker() {
       if (this.fp) {
-        this.fp.setDate(this.value)
+        this.fp.setDate(this.value);
       }
     }
   }
-}
+};
 </script>

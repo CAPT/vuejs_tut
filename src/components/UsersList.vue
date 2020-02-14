@@ -47,10 +47,10 @@ a.red {
 </style>
 <script>
 export default {
-  name: 'UsersList',
+  name: "UsersList",
   filters: {
     uppercase: function(value) {
-      return value.toUpperCase()
+      return value.toUpperCase();
     }
   },
   props: {
@@ -61,8 +61,8 @@ export default {
   },
   computed: {
     compute_users: function() {
-      return this.users.length
+      return this.users.length;
     }
   }
-}
+};
 </script>
