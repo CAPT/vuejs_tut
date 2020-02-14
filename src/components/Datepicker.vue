@@ -1,8 +1,9 @@
 <template>
   <div>
-    <input id="datepicker" type="text" class="form-control" :value="value" />
+    <input ref="datepicker" type="text" class="form-control" :value="value" />
   </div>
 </template>
+
 <script>
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.css";
@@ -13,15 +14,38 @@ export default {
     value: {
       type: String,
       required: true
+    }
+  },
+  data: () => ({
+    fp: null
+  }),
+  watch: {
+    value: "updateDatepicker"
+  },
+  mounted() {
+    this.initDatepicker();
+  },
+  beforeDestroy() {
+    if (this.fp) {
+      this.fp.destroy()
+    }
+  },
+  methods: { 
+    update(newDate) {
+      this.$emit("input", newDate);
     },
-    methods: {
-      update(newDate) {
-        this.$emit("input", newDate);
-      },
-      initDatepicker() {}
+    initDatepicker() {
+      this.fp = flatpickr(this.$refs.datepicker, {
+        dateFormat: "d.m.Y",
+        onChange: (_, dateStr) =>{
+          this.update(dateStr)
+        }
+      });
     },
-    mounted() {
-      this.initDatepicker();
+    updateDatepicker() {
+      if (this.fp) {
+        this.fp.setDate(this.value);
+      }
     }
   }
 };
