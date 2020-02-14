@@ -10,7 +10,7 @@
         name="firstName"
       />
       <span v-show="errors.has('firstName')" class="help-block text-danger">
-        {{ errors.first("firstName") }}
+        {{ errors.first('firstName') }}
       </span>
     </div>
 
@@ -24,7 +24,7 @@
         name="lastName"
       />
       <span v-show="errors.has('lastName')" class="help-block text-danger">
-        {{ errors.first("lastName") }}
+        {{ errors.first('lastName') }}
       </span>
     </div>
 
@@ -38,7 +38,7 @@
         name="email"
       />
       <span v-show="errors.has('email')" class="help-block text-danger">
-        {{ errors.first("email") }}
+        {{ errors.first('email') }}
       </span>
     </div>
 
@@ -113,16 +113,16 @@
 // Подключаем vee-validate
 //Vue.use(VeeValidate)
 export default {
-  name: "UserForm",
+  name: 'UserForm',
   // Прокидываем область видимости родителя для валидации
-  inject: ["$validator"],
+  inject: ['$validator'],
   /*components: {
     Datepicker: () => import('@/components/datepicker.vue'),
     AvatarUploader: () => import('@/components/avatar-uploader.vue')
   },*/
   model: {
     // Настраиваем компоненту работу с v-model
-    prop: "user"
+    prop: 'user'
   },
   props: {
     // Пользователь
@@ -132,7 +132,7 @@ export default {
     }
   },
   data: () => ({
-    accessList: ["guest", "user", "admin"]
+    accessList: ['guest', 'user', 'admin']
   })
-};
+}
 </script>

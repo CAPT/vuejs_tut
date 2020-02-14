@@ -1,1 +1,4 @@
-"prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}]
+{
+  "singleQuote": true,
+  "semi": false
+}

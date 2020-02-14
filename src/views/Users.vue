@@ -12,38 +12,38 @@
 </template>
 
 <script>
-import UserList from "@/components/UsersList.vue";
-import axios from "axios";
+import UserList from '@/components/UsersList.vue'
+import axios from 'axios'
 
 export default {
-  name: "UsersPage",
+  name: 'UsersPage',
   components: {
-    "user-list": UserList
+    'user-list': UserList
   },
   data: function() {
     return {
       users: []
-    };
+    }
   },
   mounted() {
-    this.loadUsers();
+    this.loadUsers()
   },
   methods: {
     loadUsers() {
-      const token = "1234567890";
+      const token = '1234567890'
 
       const config = {
         headers: {
           Authorization: `Owner ${token}`
         }
-      };
+      }
       axios
-        .get("http://localhost:3004/users", config)
+        .get('http://localhost:3004/users', config)
         .then(response => {
-          this.users = response.data;
+          this.users = response.data
         })
-        .catch(error => console.error(error));
+        .catch(error => console.error(error))
     }
   }
-};
+}
 </script>

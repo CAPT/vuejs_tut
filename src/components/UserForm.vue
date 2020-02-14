@@ -95,16 +95,16 @@
 // Подключаем vee-validate
 //Vue.use(VeeValidate)
 export default {
-  name: "UserForm",
+  name: 'UserForm',
   // Прокидываем область видимости родителя для валидации
   //inject: ['$validator'],
   components: {
-    Datepicker: () => import("@/components/Datepicker.vue") //,
+    Datepicker: () => import('@/components/Datepicker.vue') //,
     // AvatarUploader: () => import('@/components/avatar-uploader.vue'),
     //RichEditor: () => import('@/components/rich-editor.vue')
   },
   model: {
-    prop: "user"
+    prop: 'user'
   },
   props: {
     // Объект с данными пользователя
@@ -116,24 +116,24 @@ export default {
   data: () => ({
     // Локальный изменяемый объект пользователя
     localUser: null,
-    accessList: ["guest", "user", "admin"]
+    accessList: ['guest', 'user', 'admin']
   }),
   watch: {
     // При изменении локального состояния
     // отправляем объект наверх
     localUser: {
       deep: true,
-      handler: "updateUser"
+      handler: 'updateUser'
     }
   },
   created() {
     // Копируем пользователя в локальное состояние
-    this.localUser = Object.assign({}, this.user);
+    this.localUser = Object.assign({}, this.user)
   },
   methods: {
     updateUser() {
-      this.$emit("update", Object.assign({}, this.localUser));
+      this.$emit('update', Object.assign({}, this.localUser))
     }
   }
-};
+}
 </script>

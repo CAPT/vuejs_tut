@@ -14,32 +14,32 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  name: "DeleteUserPage",
+  name: 'DeleteUserPage',
   data: function() {
     return {
       user: null
-    };
+    }
   },
   computed: {
     id() {
-      return this.$route.params.id;
+      return this.$route.params.id
     }
   },
   mounted() {
-    this.deleteUser();
+    this.deleteUser()
   },
   methods: {
     deleteUser() {
       axios
-        .delete("http://localhost:3004/users/" + this.id)
+        .delete('http://localhost:3004/users/' + this.id)
         .then(setTimeout(this.goBack, 3000))
-        .catch(error => console.error(error));
+        .catch(error => console.error(error))
     },
     goBack() {
-      window.history.back();
+      window.history.back()
     }
   }
-};
+}
 </script>
