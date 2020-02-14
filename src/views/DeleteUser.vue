@@ -34,7 +34,7 @@ export default {
     deleteUser() {
       axios
         .delete("http://localhost:3004/users/" + this.id)
-        .then(setTimeout(this.goBack, 3000))
+        .then(setTimeout(this.goBack, 1000))
         .catch(error => console.error(error));
     },
     goBack() {

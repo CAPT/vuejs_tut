@@ -1569,22 +1569,6 @@
       "registered": "01.09.2016"
     },
     {
-      "id": 100,
-      "isActive": false,
-      "balance": "",
-      "picture": "",
-      "age": 0,
-      "accessLevel": "",
-      "firstName": "",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "about": "",
-      "registered": ""
-    },
-    {
       "id": 101,
       "isActive": false,
       "balance": "",
@@ -1617,22 +1601,6 @@
       "registered": ""
     },
     {
-      "id": 103,
-      "isActive": false,
-      "balance": "",
-      "picture": "",
-      "age": 0,
-      "accessLevel": "",
-      "firstName": "",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "about": "",
-      "registered": ""
-    },
-    {
       "id": 104,
       "isActive": true,
       "balance": "Infinity",
@@ -1647,6 +1615,22 @@
       "address": "32123213",
       "about": "God",
       "registered": ""
+    },
+    {
+      "id": 105,
+      "isActive": true,
+      "balance": "321321321321321321321",
+      "picture": "",
+      "age": "22",
+      "accessLevel": "admin",
+      "firstName": "Webv",
+      "lastName": "Swasr",
+      "company": "2134DRGFSDSVG",
+      "email": "fsdjk@olaoo",
+      "phone": "FDASFDSFDSF",
+      "address": "21321321321",
+      "about": "DSFDSFDSFDSF",
+      "registered": "15.02.2020"
     }
   ]
 }
