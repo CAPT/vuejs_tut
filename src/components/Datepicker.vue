@@ -27,24 +27,24 @@ export default {
   },
   beforeDestroy() {
     if (this.fp) {
-      this.fp.destroy()
+      this.fp.destroy();
     }
   },
-  methods: { 
+  methods: {
     update(newDate) {
       this.$emit("input", newDate);
     },
     initDatepicker() {
       this.fp = flatpickr(this.$refs.datepicker, {
         dateFormat: "d.m.Y",
-        onChange: (_, dateStr) =>{
+        onChange: (_, dateStr) => {
           this.update(dateStr)
         }
       });
     },
     updateDatepicker() {
       if (this.fp) {
-        this.fp.setDate(this.value);
+        this.fp.setDate(this.value)
       }
     }
   }
