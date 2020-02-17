@@ -29,7 +29,7 @@
             </td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName | uppercase }}</td>
-            <!-- <td>{{ user.age }}</td>-->
+            <!-- <td>{{ user.age }}</td> -->
             <td>{{ user.balance }}</td>
             <td>{{ user.company }}</td>
             <td>{{ user.email }}</td>
