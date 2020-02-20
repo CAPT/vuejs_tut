@@ -8,7 +8,7 @@
     </router-link>
     <div v-if="!users.length" class="alert alert-warning">Загрузка...</div>
     <user-list v-else :users="users">
-    <!--  <template v-slot:header>
+      <!--  <template v-slot:header>
         <strong>Не по сеньке шапка, ХЕ-хе</strong>
       </template>
       <template v-slot:footer>

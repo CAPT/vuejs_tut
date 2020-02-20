@@ -1,19 +1,63 @@
 <template>
   <div>
-    <div class="form-group">
+    <validationProvider
+      v-slot="{ errors, invalid, valid }"
+      name="Имя"
+      rules="required"
+      tag="div"
+      class="form-group"
+    >
       <label>Имя</label>
-      <input v-model="localUser.firstName" type="text" class="form-control" />
-    </div>
+      <input
+        v-model="localUser.firstName"
+        type="text"
+        class="form-control"
+        :class="{ 'is-invalid': invalid, 'is-valid': valid }"
+      />
+      <span v-if="errors.length" class="help-block text-danger">
+        {{ errors[0] }}
+      </span>
+      <!---<pre>{{ props }}</pre>-->
+    </validationProvider>
 
-    <div class="form-group">
+    <validationProvider
+      v-slot="{ errors, invalid, valid }"
+      name="Фамилия"
+      rules="required"
+      tag="div"
+      class="form-group"
+    >
       <label>Фамилия</label>
-      <input v-model="localUser.lastName" type="text" class="form-control" />
-    </div>
+      <input
+        v-model="localUser.lastName"
+        type="text"
+        class="form-control"
+        :class="{ 'is-invalid': invalid, 'is-valid': valid }"
+      />
+      <span v-if="errors.length" class="help-block text-danger">
+        {{ errors[0] }}
+      </span>
+    </validationProvider>
 
-    <div class="form-group">
+    <validationProvider
+      v-slot="{ errors, invalid, valid }"
+      name="Email"
+      rules="required|email"
+      tag="div"
+      class="form-group"
+    >
       <label>Email</label>
-      <input v-model="localUser.email" type="text" class="form-control" />
-    </div>
+      <input
+        v-model="localUser.email"
+        type="text"
+        class="form-control"
+        :class="{ 'is-invalid': invalid, 'is-valid': valid }"
+      />
+      <span v-if="errors.length" class="help-block text-danger">
+        {{ errors[0] }}
+      </span>
+      <!---<pre>{{ props }}</pre>-->
+    </validationProvider>
 
     <div class="form-group">
       <label>URL картинки</label>

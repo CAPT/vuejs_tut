@@ -5,11 +5,15 @@
     <div v-if="!user" class="alert alert-warning">
       Загрузка данных...
     </div>
-    <user-form v-else v-model="user" @update="user = $event" />
-    <!--/*:user="user"*/-->
-    <button type="button" class="btn btn-primary" @click="saveUser">
-      Сохранить
-    </button>
+    <template v-else>
+      <ValidationObserver ref="form">
+        <user-form v-model="user" @update="user = $event" />
+      </ValidationObserver>
+      <!--/*:user="user"*/-->
+      <button type="button" class="btn btn-primary" @click="saveUser">
+        Сохранить
+      </button>
+    </template>
   </div>
 </template>
 
@@ -41,7 +45,12 @@ export default {
         .then(response => (this.user = response.data))
         .catch(error => console.error(error));
     },
-    saveUser() {
+    async saveUser() {
+      const isValid = await this.$refs.form.validate();
+      if (!isValid) {
+        alert("Заполни фамилию");
+        return;
+      }
       axios
         .patch("http://localhost:3004/users/" + this.id, this.user)
         .then(() => {

@@ -11,7 +11,7 @@
             <th>Имя</th>
             <!--  <th>Возраст</th>-->
             <th>Баланс</th>
-            <th>Компан ия</th>
+            <th>Компания</th>
             <th>email</th>
             <th>Телефон</th>
             <th>Активен</th>
@@ -78,8 +78,8 @@ export default {
     }
   },
   methods: {
-    choo(){
-      alert('Choo-Choo!!!');
+    choo() {
+      alert("Choo-Choo!!!");
     }
   }
 };
