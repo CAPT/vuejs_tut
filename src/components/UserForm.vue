@@ -61,6 +61,7 @@
 
     <div class="form-group">
       <label>URL картинки</label>
+      <img class="img-thumbnail" :src="localUser.picture" />
       <avatar-uploader v-model="localUser.picture" />
     </div>
 
@@ -143,8 +144,8 @@ export default {
   // Прокидываем область видимости родителя для валидации
   //inject: ['$validator'],
   components: {
-    Datepicker: () => import("@/components/Datepicker.vue") //,
-    // AvatarUploader: () => import('@/components/avatar-uploader.vue'),
+    Datepicker: () => import("@/components/Datepicker.vue"),
+    AvatarUploader: () => import("@/components/AvatarUploader.vue")
     //RichEditor: () => import('@/components/rich-editor.vue')
   },
   model: {
