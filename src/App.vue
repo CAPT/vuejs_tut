@@ -7,7 +7,9 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">VueUsersApp</a>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">
+        {{ title }}
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -39,6 +41,19 @@
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+  computed: {
+    title() {
+      return (
+        this.$store.state.navbarTitle + " " + this.$store.getters.titleCount
+      );
+    }
+  }
+};
+</script>
 
 <style>
 #app {
